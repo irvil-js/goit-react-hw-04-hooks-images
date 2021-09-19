@@ -1,21 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ImageGalleryItem from './ImageGalleryItem';
-import styles from './ImageGallery.module.css';
+import React from "react";
+import PropTypes from "prop-types";
+import ImageGalleryItem from "./ImageGalleryItem";
+import styles from "./ImageGallery.module.css";
 
-const ImageGallery = ({ onClick, images }) => {
+const ImageGallery = ({ images, largeURL }) => {
   return (
-    <ul className={styles.ImageGallery}>
-      {images.map(({ id, webformatURL, largeImageURL }) => {
-        return (
-          <ImageGalleryItem
-            onClick={onClick}
-            key={id}
-            webformatURL={webformatURL}
-            largeImg={largeImageURL}
-          />
-        );
-      })}
+    <ul className={styles.imageGallery}>
+      {images.map((image, index) => (
+        <ImageGalleryItem
+          key={index}
+          webformatURL={image.webformatURL}
+          largeImageURL={image.largeImageURL}
+          tags={image.tags}
+          imageClick={largeURL}
+        />
+      ))}
     </ul>
   );
 };
@@ -29,6 +28,6 @@ ImageGallery.propTypes = {
       id: PropTypes.number.isRequired,
       webformatURL: PropTypes.string.isRequired,
       largeImageURL: PropTypes.string.isRequired,
-    }).isRequired,
+    }).isRequired
   ).isRequired,
 };

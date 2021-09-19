@@ -1,17 +1,32 @@
-import React from 'react';
-import styles from '../ImageGallery.module.css';
+import React from "react";
+import PropTypes from "prop-types";
 
-const ImageGalleryItem = ({ webformatURL, onClick, largeImg }) => {
+import styles from "../ImageGallery.module.css";
+
+function ImageGalleryItem({
+  webformatURL = "https://picsum.photos/600/400",
+  largeImageURL = "https://picsum.photos/600/400",
+  tags,
+  imageClick,
+}) {
   return (
-    <li className={styles.ImageGalleryItem} onClick={onClick}>
+    <li className={styles.imageGalleryItem}>
       <img
         src={webformatURL}
-        alt="#"
-        data-src={largeImg}
-        className={styles.ImageGalleryItemImage}
+        data-sourse={largeImageURL}
+        alt={tags}
+        className={styles.image}
+        onClick={imageClick}
       />
     </li>
   );
-};
+}
 
 export default ImageGalleryItem;
+
+ImageGalleryItem.propTypes = {
+  tags: PropTypes.string,
+  webformatURL: PropTypes.string,
+  largeImageURL: PropTypes.string,
+  imageClick: PropTypes.func,
+};

@@ -1,9 +1,9 @@
-import React from 'react';
-import Loader from 'react-loader-spinner';
-import styles from './Loader.module.css';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import React from "react";
+import Loader from "react-loader-spinner";
+import styles from "./Loader.module.css";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
-const AppLoader = () => {
+function AppLoader() {
   return (
     <div className={styles.Loader}>
       <Loader
@@ -15,6 +15,6 @@ const AppLoader = () => {
       />
     </div>
   );
-};
+}
 
 export default AppLoader;
