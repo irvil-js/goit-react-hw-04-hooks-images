@@ -26,7 +26,7 @@ function Searchbar({ onSubmit }) {
   return (
     <header className={styles.searchbar}>
       <form onSubmit={handleSubmit} className={styles.searchForm}>
-        <button type="submit" className={styles.button}>
+        <button type="submit" className={styles.searchFormButton}>
           <span className={styles.label}>Search</span>
         </button>
         <input

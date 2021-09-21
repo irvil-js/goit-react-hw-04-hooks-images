@@ -13,5 +13,5 @@ function Button({ loadMore }) {
 export default Button;
 
 Button.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
