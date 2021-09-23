@@ -16,7 +16,7 @@
   max-height: calc(100vh - 24px);
 }
 
-/* .modal > img {
+.modal > img {
   display: block;
   position: absolute;
   top: 0;
@@ -26,4 +26,4 @@
   margin: auto;
   max-width: 95%;
   max-height: 95%;
-} */
+}

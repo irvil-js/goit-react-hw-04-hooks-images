@@ -1,12 +1,3 @@
-// import React, { useState, useEffect } from "react";
-// import SearchBar from "./components/Searchbar";
-// import ImageGallery from "./components/ImageGallery";
-// import Button from "./components/Button";
-// import Modal from "./components/Modal";
-// import AppLoader from "./components/Loader";
-// import fetchImages from "./services/api-service";
-// import styles from "./App.module.css";
-
 import { useState, useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -104,9 +95,9 @@ export default function App() {
   return (
     <div className={styles.app}>
       <Searchbar onSubmit={handleFormSubmit} />
-      {status === Status.IDLE && (
+      {/* {status === Status.IDLE && (
         <div className={styles.text}>Введите текст для поиска</div>
-      )}
+      )} */}
       {status === Status.PENDING && <Loader />}
       {status === Status.REJECTED && <ImageErrorView message={error.message} />}
       {total > 1 && status === Status.RESOLVED && (
